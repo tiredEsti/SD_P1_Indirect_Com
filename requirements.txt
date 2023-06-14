@@ -1,0 +1,6 @@
+grpcio
+grpcio-tools
+datetime
+matplotlib
+redis
+pika
