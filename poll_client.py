@@ -16,7 +16,7 @@ detector = meteo_utils.MeteoDataDetector()
 # create a valid request message
 poll = detector.analyze_pollution()
 currenttime = datetime.now()
-poll_info = meteo_utils.RawMeteoData(poll['co2'], currenttime.strftime("%Y-%m-%d %H:%M:%S"))
+poll_info = meteo_utils.RawPollutionData(poll['co2'], currenttime.strftime("%Y-%m-%d %H:%M:%S"))
 
 p_poll_info = pickle.dumps(poll_info)
 

@@ -21,7 +21,7 @@ def main():
         if isinstance(data, meteo_utils.RawMeteoData):
             processor = meteo_utils.MeteoDataProcessor()
             coef = processor.process_meteo_data(data)
-            redis_db.rpush('meteo', f'({data.timestamp} : {coef})') 
+            redis_db.rpush('meteo', f'({data.timestamp} : {coef})')
             print('Wellness data received and stored')
         else:
             processor = meteo_utils.MeteoDataProcessor()
