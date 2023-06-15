@@ -16,7 +16,6 @@
 import random
 import time
 import itertools
-from typing import Any
 
 from numpy import linspace, searchsorted
 import scipy
@@ -61,17 +60,7 @@ class ProcessedData:
         self.timestampWell = timestampWell
         self.timestampPoll = timestampPoll
 
-    def get_well(self):
-        return self.well
 
-    def get_poll(self):
-        return self.poll
-    
-    def get_timestampWell(self):
-        return self.timestampWell
-    
-    def get_timestampPoll(self):            
-        return self.timestampPoll
 
 class MeteoDataDetector:
     """

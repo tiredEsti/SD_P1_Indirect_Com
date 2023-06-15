@@ -4,6 +4,7 @@ import pickle
 from datetime import datetime
 import time
 import meteo_utils
+
 # Redis connection
 r = redis.Redis(host='localhost', port=6379, db=0)
 connection = pika.BlockingConnection(
@@ -42,7 +43,7 @@ try:
         # Send mean to connected terminals
         data = meteo_utils.ProcessedData(wdata[0], pdata[0], wdata[1], pdata[1])
         p_data = pickle.dumps(data)
-        channel.basic_publish(exchange='logs', routing_key='terminal_queue', body= p_data)
+        channel.basic_publish(exchange='logs', routing_key='', body= p_data)
         print("Data retrieved from Redis and sent to terminals")
 except KeyboardInterrupt:
     connection.close()
